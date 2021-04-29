@@ -88,10 +88,14 @@ public class BusStopSearch {
 			Node node = search(word);
 			if(node.eq == null)
 			{
-				for(int i=0; i<8; i++)
-				{
-					System.out.println(stops.get(node.key+i));
-				}
+				System.out.println("Stop ID: " + stops.get(node.key));
+				System.out.println("Stop Code: " + stops.get(node.key+1));
+				System.out.println("Stop Name: " + stops.get(node.key+2));
+				System.out.println("Stop ID: " + stops.get(node.key+3));
+				System.out.println("Stop Desc: " + stops.get(node.key+4));
+				System.out.println("Zone ID: " + stops.get(node.key+5));
+				System.out.println("Stop UR;: " + stops.get(node.key+6));
+				System.out.println("Location Type: " + stops.get(node.key+7));
 			}
 				
 			else match(node.eq,stops);
@@ -105,10 +109,14 @@ public class BusStopSearch {
 			match(r.left, stops);
 			if(r.key != 0)
 			{
-				for(int i=0; i<8; i++)
-				{
-					System.out.println(stops.get(r.key+i));
-				}
+				System.out.println("Stop ID: " + stops.get(r.key));
+				System.out.println("Stop Code: " + stops.get(r.key+1));
+				System.out.println("Stop Name: " + stops.get(r.key+2));
+				System.out.println("Stop ID: " + stops.get(r.key+3));
+				System.out.println("Stop Desc: " + stops.get(r.key+4));
+				System.out.println("Zone ID: " + stops.get(r.key+5));
+				System.out.println("Stop UR;: " + stops.get(r.key+6));
+				System.out.println("Location Type: " + stops.get(r.key+7));
 			}
 			match(r.eq, stops);
 			match(r.right, stops);
