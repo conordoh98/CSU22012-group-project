@@ -11,4 +11,4 @@ Mohamed Difallah -
 
 Aaron Bruce - 
 
-John Cosgrave - 
+John Cosgrove -  Created tripSearch.java and coded part 3 of the assignment. Then helped Conor integrate it with interface.
