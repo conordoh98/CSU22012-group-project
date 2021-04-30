@@ -79,10 +79,6 @@ public class frontInterface {
 					else {
 						String outputString="";
 						ArrayList<String[]> returnList= tripSearch.search(arrivalTime);
-						if(returnList.get(0)[0]==null) {
-							System.out.println("There does not appear to be any trips matching this time");
-						}
-						else {
 							System.out.println("Trip ID\t\tArrival time\tDeparture time\tStop ID\tStop Sequence\tDropoff type\tShape Distance Travelled");
 							for(int i=0;i<returnList.size();i++) {
 								for(int j=0;j<8;j++) {
@@ -102,7 +98,6 @@ public class frontInterface {
 								else outputString+="\n";
 							}
 							System.out.println(outputString);
-						}
 					}
 				}
 				else if(option == 4) {
@@ -112,7 +107,7 @@ public class frontInterface {
 				else System.out.println("Error invalid input,please select a valid option\n");
 			}
 			catch(Exception InputMismatchException) {
-				System.out.println("Error invalid input,please select a valid option\n");
+				System.out.println("Error invalid input,please try again\n");
 				input.nextLine();
 			}
 		}
