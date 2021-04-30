@@ -13,6 +13,9 @@ import java.io.FileNotFoundException;
 public class tripSearch{
 	public static ArrayList<String[]> search(String searchTerm) {
 		ArrayList<String[]> tripDetails = new ArrayList<>(0);
+		if(tripSearch.timeCheck(searchTerm)){
+			return tripDetails;
+		}
 		try {
         File map = new File("busInfo/stop_times.txt");
 	    Scanner myReader = new Scanner(map);
@@ -20,9 +23,7 @@ public class tripSearch{
         while (myReader.hasNextLine()) {
           String[] currentLine = myReader.nextLine().split(",");
           if(currentLine.length>2){
-          if(currentLine[1].replace(" ","0").equals(searchTerm) &&
-             tripSearch.timeCheck(currentLine[1].replace(" ","0"),currentLine[2].replace(" ","0"))==true
-          ){
+          if(currentLine[1].replace(" ","0").equals(searchTerm)){
         	  String[] tempArray = {currentLine[0],currentLine[1].replace(" ","0"),currentLine[2].replace(" ","0"),currentLine[3]
                       ,currentLine[4],currentLine[5],currentLine[6],currentLine[7]};
               tripDetails.add(tempArray);
@@ -33,37 +34,20 @@ public class tripSearch{
         }
         return tripDetails;
 }
-    private static Boolean timeCheck(String startTime, String endTime){
-        String[] startTimeSplit = startTime.split(":");
-        if(startTimeSplit.length != 3){
+    private static Boolean timeCheck(String time){
+        String[] timeSplit = time.split(":");
+        if(timeSplit.length != 3){
             return false;
         }
-        int hour = Integer.parseInt(startTimeSplit[0]);
+        int hour = Integer.parseInt(timeSplit[0]);
         if(hour>24 || hour<0){
             return false;
         }
-        int minute = Integer.parseInt(startTimeSplit[1]);
+        int minute = Integer.parseInt(timeSplit[1]);
         if(minute < 0 || minute > 60){
             return false;
         }
-        int second = Integer.parseInt(startTimeSplit[2]);
-        if(second < 0 || second >60){
-            return false;
-        }
-
-        String[] endTimeSplit = endTime.split(":");
-        if(endTimeSplit.length != 3){
-            return false;
-        }
-        hour = Integer.parseInt(endTimeSplit[0]);
-        if(hour>24 || hour<0){
-            return false;
-        }
-        minute = Integer.parseInt(endTimeSplit[1]);
-        if(minute < 0 || minute > 60){
-            return false;
-        }
-        second = Integer.parseInt(endTimeSplit[2]);
+        int second = Integer.parseInt(timeSplit[2]);
         if(second < 0 || second >60){
             return false;
         }
