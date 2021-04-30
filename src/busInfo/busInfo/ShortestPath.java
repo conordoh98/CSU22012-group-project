@@ -173,7 +173,7 @@ class ShortestPath {
         sequence.add(getStopById(end));
         do {
             currentStop = edgeTo[currentStop].from;
-            if (edgeTo[currentStop] == null) {
+            if (edgeTo[currentStop] == null && currentStop != start) {
                 return "There is no path !";
             }
             sequence.add(getStopById(currentStop));
