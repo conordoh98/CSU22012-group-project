@@ -16,6 +16,10 @@ _A document explaining the design decisions (a choice of data structures and alg
 
 <ins>Ternary Search Tree</ins>
 
+For data structures to use for my part of the problem, I did not have much choice in the matter as it was specified in the question that I had to use a ternary search tree. I also used the standard insert, search and traverse algorithms in order to implement the full functionality for storing 
+and searching for bus stops in the ternary search tree. All of these methods have a worst-case time complexity of O(N).
+
+
 <ins>Searching With a Given Arrival Time</ins>
 
 I originally designed the algoithm with serial search. I then realised that binary search would be far quicker for an ordered list. I then redesigned the algorithm. After getting strange results, I realised that the list was never ordered! Back to the drawing board... 
