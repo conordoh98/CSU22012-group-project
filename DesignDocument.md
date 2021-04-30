@@ -27,4 +27,4 @@ I originally designed the algoithm with serial search. I then realised that bina
 The final version of the function uses serial search as this is the quickest way to search an unordered list without using parallelism. It has time complexity O(N). I considered ordering the list and then using binary search, but realised this would be have to be longer than serial search.
 I have also implemented the checks required.
 
-I use an arrayList of arrays to store the results as an arrayList is resizeable. This is useful as we don't know how many results there will be. We then use arrays inside it because we know every result has 8 fields.
+I use an arrayList of arrays to store the results as an arrayList is resizeable. This is useful as we don't know how many results there will be. We then use arrays inside it because we know every result has 8 fields. This is the most efficient way to store the results and is useful for Conor to work with when the class outputs it.
