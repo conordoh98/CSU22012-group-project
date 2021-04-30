@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.lang.NullPointerException;
 import java.util.Scanner;
 
 class ShortestPath {
@@ -172,8 +173,9 @@ class ShortestPath {
 
         sequence.add(getStopById(end));
         do {
-            currentStop = edgeTo[currentStop].from;
-            if (edgeTo[currentStop] == null && currentStop != start) {
+            try {
+                currentStop = edgeTo[currentStop].from;
+            } catch (NullPointerException e) {
                 return "There is no path !";
             }
             sequence.add(getStopById(currentStop));
