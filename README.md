@@ -5,7 +5,7 @@ Link to repository - https://github.com/conordoh98/CSU22012-group-project
 
 <ins>Group Members list and contributions</ins>
 
-Conor Doherty - 
+Conor Doherty - Created the github repository. Created the basic java project. Wrote the frontInterface.java file which is the interface for the user to pick a function, enter the search query information and returns data.
 
 Mohamed Difallah - 
 
