@@ -17,3 +17,10 @@ _A document explaining the design decisions (a choice of data structures and alg
 <ins>Ternary Search Tree</ins>
 
 <ins>Searching With a Given Arrival Time</ins>
+
+I originally designed the algoithm with serial search. I then realised that binary search would be far quicker for an ordered list. I then redesigned the algorithm. After getting strange results, I realised that the list was never ordered! Back to the drawing board... 
+
+The final version of the function uses serial search as this is the quickest way to search an unordered list without using parallelism. It has time complexity O(N). I considered ordering the list and then using binary search, but realised this would be have to be longer than serial search.
+I have also implemented the checks required.
+
+I use an arrayList of arrays to store the results as an arrayList is resizeable. This is useful as we don't know how many results there will be. We then use arrays inside it because we know every result has 8 fields.
