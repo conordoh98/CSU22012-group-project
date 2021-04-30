@@ -113,7 +113,7 @@ public class frontInterface {
 			}
 			catch(Exception InputMismatchException) {
 				System.out.println("Error invalid input,please select a valid option\n");
-				input.next();
+				input.nextLine();
 			}
 		}
 	}
